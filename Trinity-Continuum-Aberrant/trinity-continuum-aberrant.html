@@ -1,0 +1,832 @@
+<!-- Character Sheet -->
+<div class='wrapper'>
+	<input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab"  value="core"  />
+	<div class='sheet-header'>	
+		<h2>Aberrant 2E</h2>
+		<div class='sheet-grid_details'>
+    		<div class="grid_item"><input type='text' class='sheet-st' name='attr_character_name' /></div>
+    		<div class="grid_item"><input class='sheet-st' type='text' name='attr_player_name' /></div>
+    		<div class="grid_item"><input class='sheet-st' type='text' name='attr_Exp' min='0' value="0" /></div>
+    		<div class="grid_item"><input class='sheet-st' type='text' name='attr_ExpEarned' min='0' value="0"/></div> 
+    		<div class="grid_item"><div class="subtitle">Character Name</div></div> 
+    		<div class="grid_item"><div class="subtitle">Player Name</div></div> 
+			<div class="grid_item"><div class="subtitle">Experience</div></div> 
+    	    <div class="grid_item"><div class="subtitle">Total XP Earned</div></div> 
+    	</div>
+		<div class='sheet-grid_details_2'>
+    		<div class="grid_item"><input type='text' class='sheet-st' name='attr_ShortAsp1' /></div>
+    		<div class="grid_item"><input class='sheet-st' type='text' name='attr_ShortAsp2' /></div>
+    		<div class="grid_item"><input class='sheet-st' type='text' name='attr_LongAsp' /></div>
+    		<div class="grid_item"><div class="subtitle">Short-term Aspiration 1</div></div> 
+    		<div class="grid_item"><div class="subtitle">Short-term Aspiration 2</div></div> 
+    		<div class="grid_item"><div class="subtitle">Long-term Aspiration</div></div> 
+    	</div>
+		<div class="grid_dual_col">
+			<div class="grid_item">
+				<button class="roll-btn" name="roll_Generic" type="roll" value="&{template:base} {{name=}} {{subtag= @{character_name}}} [[ [[{?{Total Dice?|0}d10!}>7]] + [[?{Enhancement?|0}]] ]] {{generic=$[[0]]}} {{generictotal=$[[2]]}} {{enhancement=$[[1]]}}"> Roll-for-it </button>			
+			</div>
+			<div class="grid_item" align="right">
+				<button class="action-btn" type="action" name="act_core">Core</button>
+				<button class="action-btn" type="action" name="act_status">Status</button>
+				<button class="action-btn" type="action" name="act_gear">Gear</button>	  
+				<button class="action-btn" type="action" name="act_quantum">Quantum</button>
+				<button class="action-btn" type="action" name="act_ch_background">Background</button>
+			</div>
+		</div>
+	</div>
+	<br/>
+	<div class='sheet-core'>
+	<!-- Skills Header-->
+		<div class="grid_dual_col">
+			<h3>Skills</h3>
+			<div class="grid_item" align="right">
+				<button class="txt-btn" name="roll_Initiative" type="roll" value="&{template:base} {{name=Initiative}} {{subtag= @{character_name}}} [[ [[{[[{(@{Empathy}+@{Dexterity}),(@{Athletics}+@{Cunning})}KL1]]d10!}>7]] + [[?{Enhancement?|0}]] ]] {{initiative=$[[1]]}} {{initiativetotal=$[[3]]}} {{enhancement=$[[2]]}}"> Initiative </button>
+			</div>
+		</div>
+	<!-- Skills -->
+		<div class="sheet-grid_skills_row">
+            <div class="col">
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Aim" type="roll" value="&{template:base} {{name=Aim}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Aim})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Aim</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Aim_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Aim' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Aim' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Aim' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Aim' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Aim' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Aim' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Aim' value=6 /><span></span>
+					</div>
+				</div>
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Athletics" type="roll" value="&{template:base} {{name=Athletics}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Athletics})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Athletics</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Athletics_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Athletics' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Athletics' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Athletics' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Athletics' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Athletics' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Athletics' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Athletics' value=6 /><span></span>
+					</div>
+				</div>
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_CloseCombat" type="roll" value="&{template:base} {{name=CloseCombat}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{CloseCombat})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">CloseCombat</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_CloseCombat_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_CloseCombat' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_CloseCombat' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_CloseCombat' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_CloseCombat' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_CloseCombat' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_CloseCombat' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_CloseCombat' value=6 /><span></span>
+					</div>
+				</div>
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Command" type="roll" value="&{template:base} {{name=Command}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Command})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Command</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Command_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Command' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Command' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Command' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Command' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Command' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Command' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Command' value=6 /><span></span>
+					</div>
+				</div>
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Culture" type="roll" value="&{template:base} {{name=Culture}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Culture})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Culture</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Culture_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Culture' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Culture' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Culture' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Culture' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Culture' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Culture' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Culture' value=6 /><span></span>
+					</div>
+				</div>
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Empathy" type="roll" value="&{template:base} {{name=Empathy}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Empathy})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Empathy</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Empathy_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Empathy' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Empathy' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Empathy' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Empathy' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Empathy' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Empathy' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Empathy' value=6 /><span></span>
+					</div>
+				</div>
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Enigmas" type="roll" value="&{template:base} {{name=Enigmas}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Enigmas})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Enigmas</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Enigmas_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Enigmas' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Enigmas' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Enigmas' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Enigmas' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Enigmas' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Enigmas' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Enigmas' value=6 /><span></span>
+					</div>
+				</div>
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Humanities" type="roll" value="&{template:base} {{name=Humanities}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Humanities})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Humanities</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Humanities_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Humanities' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Humanities' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Humanities' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Humanities' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Humanities' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Humanities' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Humanities' value=6 /><span></span>
+					</div>
+				</div>
+            </div>
+			<div class="col">
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Integrity" type="roll" value="&{template:base} {{name=Integrity}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Integrity})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Integrity</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Integrity_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Integrity' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Integrity' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Integrity' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Integrity' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Integrity' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Integrity' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Integrity' value=6 /><span></span>
+					</div>
+				</div>
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Larceny" type="roll" value="&{template:base} {{name=Larceny}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Larceny})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Larceny</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Larceny_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Larceny' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Larceny' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Larceny' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Larceny' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Larceny' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Larceny' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Larceny' value=6 /><span></span>
+					</div>
+				</div>
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Medicine" type="roll" value="&{template:base} {{name=Medicine}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Medicine})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Medicine</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Medicine_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Medicine' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Medicine' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Medicine' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Medicine' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Medicine' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Medicine' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Medicine' value=6 /><span></span>
+					</div>
+				</div>
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Persuasion" type="roll" value="&{template:base} {{name=Persuasion}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Persuasion})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Persuasion</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Persuasion_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Persuasion' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Persuasion' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Persuasion' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Persuasion' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Persuasion' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Persuasion' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Persuasion' value=6 /><span></span>
+					</div>
+				</div>
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Pilot" type="roll" value="&{template:base} {{name=Pilot}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Pilot})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Pilot</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Pilot_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Pilot' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Pilot' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Pilot' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Pilot' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Pilot' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Pilot' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Pilot' value=6 /><span></span>
+					</div>
+				</div>
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Science" type="roll" value="&{template:base} {{name=Science}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Science})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Science</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Science_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Science' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Science' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Science' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Science' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Science' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Science' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Science' value=6 /><span></span>
+					</div>
+				</div>
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Survival" type="roll" value="&{template:base} {{name=Survival}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Survival})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Survival</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Survival_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Survival' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Survival' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Survival' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Survival' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Survival' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Survival' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Survival' value=6 /><span></span>
+					</div>
+				</div>
+				<div class="sheet-grid_skills">
+					<div><button class="txt-btn" name="roll_Technology" type="roll" value="&{template:base} {{name=Technology}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Technology})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Technology</button></div>
+					<div><input class='sheet-specialty' type='text' name='attr_Technology_Specialty' /></div>
+					<div>
+						<input type='radio' class="dot zero" name='attr_Technology' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Technology' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Technology' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Technology' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Technology' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Technology' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Technology' value=6 /><span></span>
+					</div>
+				</div>				
+			</div>
+        </div>
+		<br/>
+	<!-- Attributes-->	
+		<div><h3>Attributes</h3></div>
+		<div class="sheet-grid_attributes_row">
+			<div class="col">
+				<div class="sheet-grid_attributes0">
+					<div><input type='radio' class="approachcheck" name='attr_Approach' value="force" checked /><span></span></div>
+					<div class="grid_item">Force</div>
+				</div>
+				<div class="sheet-grid_attributes0">
+					<div><input type='radio' class="approachcheck" name='attr_Approach' value="finesse" checked /><span></span></div>
+					<div class="grid_item">Finesse</div>
+				</div>
+				<div class="sheet-grid_attributes0">
+					<div><input type='radio' class="approachcheck" name='attr_Approach' value="resilience" checked /><span></span></div>
+					<div class="grid_item">Resilience</div>
+				</div>				
+			</div>
+    		<div class="col">
+				<div class="sheet-grid_attributes1">
+					<div class="item 120">Intellect</div>
+					<div>
+						<div class="item 13"></div>
+						<input type='radio' class="dot" name='attr_Intellect' value=1 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Intellect' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Intellect' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Intellect' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Intellect' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Intellect' value=6 /><span></span>
+					</div>	
+				</div>
+				<div class="sheet-grid_attributes1">
+					<div class="item 120">Cunning</div>
+					<div>
+						<div class="item 13"></div>
+						<input type='radio' class="dot" name='attr_Cunning' value=1 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Cunning' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Cunning' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Cunning' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Cunning' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Cunning' value=6 /><span></span>
+					</div>	
+				</div>
+				<div class="sheet-grid_attributes1">
+					<div class="item 120">Resolve</div>
+					<div>
+						<div class="item 13"></div>
+						<input type='radio' class="dot" name='attr_Resolve' value=1 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Resolve' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Resolve' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Resolve' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Resolve' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Resolve' value=6 /><span></span>
+					</div>	
+				</div>					
+            </div>
+    		<div class="col">
+				<div class="sheet-grid_attributes1">
+					<div class="item 120">Might</div>
+					<div>
+						<div class="item 13"></div>
+						<input type='radio' class="dot" name='attr_Might' value=1 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Might' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Might' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Might' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Might' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Might' value=6 /><span></span>
+					</div>	
+				</div>
+				<div class="sheet-grid_attributes1">
+					<div class="item 120">Dexterity</div>
+					<div>
+						<div class="item 13"></div>
+						<input type='radio' class="dot" name='attr_Dexterity' value=1 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Dexterity' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Dexterity' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Dexterity' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Dexterity' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Dexterity' value=6 /><span></span>
+					</div>	
+				</div>	
+				<div class="sheet-grid_attributes1">
+					<div class="item 120">Stamina</div>
+					<div>
+						<div class="item 13"></div>
+						<input type='radio' class="dot" name='attr_Stamina' value=1 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Stamina' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Stamina' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Stamina' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Stamina' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Stamina' value=6 /><span></span>
+					</div>	
+				</div>				
+            </div>
+    		<div class="col">
+				<div class="sheet-grid_attributes2">
+					<div class="item 120">Presence</div>
+					<div>
+						<div class="item 13"></div>
+						<input type='radio' class="dot" name='attr_Presence' value=1 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Presence' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Presence' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Presence' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Presence' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Presence' value=6 /><span></span>
+					</div>	
+				</div>				
+				<div class="sheet-grid_attributes2">
+					<div class="item 120">Manipulation</div>
+					<div>
+						<div class="item 13"></div>
+						<input type='radio' class="dot" name='attr_Manipulation' value=1 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Manipulation' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Manipulation' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Manipulation' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Manipulation' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Manipulation' value=6 /><span></span>
+					</div>	
+				</div>
+				<div class="sheet-grid_attributes2">
+					<div class="item 120">Composure</div>
+					<div>
+						<div class="item 13"></div>
+						<input type='radio' class="dot" name='attr_Composure' value=1 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Composure' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Composure' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Composure' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Composure' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Composure' value=6 /><span></span>
+					</div>	
+				</div>						
+            </div>
+        </div>
+		<br/>
+	<!-- Edges -->	
+		<div class="sheet-grid_skills_row">
+			<div class="grid_item">
+				<h3>Edges</h3>
+				<fieldset class='repeating_edges'>
+					<div class="sheet-grid_edges">
+						<div><input type='text' class='sheet-specialty' name='attr_rEdgeName' placeholder='Name'></div>
+						<div>
+							<input type='radio' class="dot zero" name='attr_rEdge' value=0 checked /><span></span>
+							<input type='radio' class="dot" name='attr_rEdge' value=1  /><span></span>
+							<input type='radio' class="dot" name='attr_rEdge' value=2 /><span></span>
+							<input type='radio' class="dot" name='attr_rEdge' value=3 /><span></span>
+							<input type='radio' class="dot" name='attr_rEdge' value=4 /><span></span>
+							<input type='radio' class="dot" name='attr_rEdge' value=5 /><span></span>
+							<input type='radio' class="dot" name='attr_rEdge' value=6 /><span></span>
+						</div>
+					</div>
+				</fieldset>			
+			</div>
+			<div class="grid_item">
+				<h3>Skill Tricks</h3>
+				<fieldset class='repeating_skilltricks'>
+					<div class="aligneddots">
+						<div class="row"><input type='text' class='sheet-specialty' name='attr_rSTrickName' placeholder='Name'></div>
+					</div>
+				</fieldset>			
+			</div>
+		</div>
+	</div>
+	<!-- Injuries and Conditionds -->	
+	<div class='sheet-status'>
+		<div class="dual_col">
+			<div class="col">
+				<h3>Injury Conditions</h3>
+				<fieldset class='repeating_injuries'>
+					<div class="sheet-grid_wounds">
+						<div>
+							<input type="checkbox" class='woundcheck' name="rWoundChecked" value="wound"><span></span>
+						</div>
+						<div>
+							<select class="select_wound" name="attr_rWound_type">
+								<option value="Bruised">Bruised (+1)</option>
+								<option value="Injured">Injured (+2)</option>
+								<option value="Maimed">Maimed (+4)</option>
+								<option value="TakenOut">Taken Out</option>
+							</select>
+						</div>
+						<div class="item 200">
+							<input type='text' class='sheet-wound' name='attr_rWound_Desc'>
+						</div>
+					</div>
+				</fieldset>			
+			</div>
+			<div class="col">
+				<h3>Other Conditions</h3>
+				<fieldset class='repeating_skilltricks'>
+					<div class="aligneddots">
+						<div class="row"><input type='text' class='sheet-specialty' name='attr_rConditions' placeholder='Name'></div>
+					</div>
+				</fieldset>			
+			</div>
+		</div>
+	</div>
+	<!-- Gear and Stuff (needs work) -->	
+	<div class='sheet-gear'>	
+		<div>
+			<h3>Gear</h3>
+			<textarea class="textarea_2" name='attr_GearNotes' placeholder='Gear'></textarea>
+		</div>
+		<div>
+			<h3>Armor</h3>
+			<textarea class="textarea_2" name='attr_ArmorNotes' placeholder='Armor'></textarea>
+		</div>
+		<div>
+			<h3>Weapons</h3>
+			<textarea class="textarea_2" name='attr_WeaponsNotes' placeholder='Weapons'></textarea>
+		</div>
+		<div>
+			<h3>Vehicles</h3>
+			<textarea class="textarea_2" name='attr_VehiclesNotes' placeholder='Vehicles'></textarea>
+		</div>
+	</div>
+	<!-- Nova Abilities -->	
+	<div class='sheet-quantum'>	
+		<!--	Attributes	-->
+		<h3>Mega-Attributes</h3>
+		<!--    Force	-->
+		<div class="grid_megaattributes_row">
+    		<div class="col">		
+				<div class="sheet-grid_megaattributes1">
+					<div class="item 120">Mega-Intellect</div>
+					<div>
+						<input type='radio' class="mdot zero" name='attr_Mega_Intellect' value=0 checked /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Intellect' value=1 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Intellect' value=2 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Intellect' value=3 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Intellect' value=4 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Intellect' value=5 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Intellect' value=6 /><span></span>
+					</div>
+				</div>
+            </div>
+    		<div class="col">	
+				<div class="sheet-grid_megaattributes1">
+					<div class="item 120">Mega-Might</div>
+					<div>
+						<input type='radio' class="mdot zero" name='attr_Mega_Might' value=0 checked /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Might' value=1 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Might' value=2 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Might' value=3 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Might' value=4 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Might' value=5 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Might' value=6 /><span></span>
+					</div>
+				</div>
+            </div>
+    		<div class="col">		
+				<div class="sheet-grid_megaattributes2">
+					<div class="item 120">Mega-Presence</div>
+					<div>
+						<input type='radio' class="mdot zero" name='attr_Mega_Presence' value=0 checked /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Presence' value=1 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Presence' value=2 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Presence' value=3 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Presence' value=4 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Presence' value=5 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Presence' value=6 /><span></span>
+					</div>
+				</div>
+            </div>
+        </div>
+		<!--    Finesse-->
+		<div class="grid_megaattributes_row">
+    		<div class="col">		
+				<div class="sheet-grid_megaattributes1">
+					<div class="item 120">Mega-Cunning</div>
+					<div>
+						<input type='radio' class="mdot zero" name='attr_Mega_Cunning' value=0 checked /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Cunning' value=1 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Cunning' value=2 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Cunning' value=3 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Cunning' value=4 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Cunning' value=5 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Cunning' value=6 /><span></span>
+					</div>
+				</div>
+            </div>
+    		<div class="col">		
+				<div class="sheet-grid_megaattributes1">
+					<div class="item 120">Mega-Dexterity</div>
+					<div>
+						<input type='radio' class="mdot zero" name='attr_Mega_Dexterity' value=0 checked /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Dexterity' value=1 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Dexterity' value=2 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Dexterity' value=3 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Dexterity' value=4 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Dexterity' value=5 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Dexterity' value=6 /><span></span>
+					</div>
+				</div>
+            </div>
+    		<div class="col">			
+				<div class="sheet-grid_megaattributes2">
+					<div class="item 120">Mega-Manipulation</div>
+					<div>
+						<input type='radio' class="mdot zero" name='attr_Mega_Manipulation' value=0 checked /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Manipulation' value=1 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Manipulation' value=2 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Manipulation' value=3 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Manipulation' value=4 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Manipulation' value=5 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Manipulation' value=6 /><span></span>
+					</div>
+				</div>
+            </div>
+        </div>
+		<!--    Resilience -->
+ 		<div class="grid_megaattributes_row">
+    		<div class="col">				
+				<div class="sheet-grid_megaattributes1">
+					<div class="item 120">Mega-Resolve</div>
+					<div>
+						<input type='radio' class="mdot zero" name='attr_Mega_Resolve' value=0 checked /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Resolve' value=1 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Resolve' value=2 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Resolve' value=3 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Resolve' value=4 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Resolve' value=5 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Resolve' value=6 /><span></span>
+					</div>
+				</div>
+            </div>
+    		<div class="col">			
+				<div class="sheet-grid_megaattributes1">
+					<div class="item 120">Mega-Stamina</div>
+					<div>
+						<input type='radio' class="mdot zero" name='attr_Mega_Stamina' value=0 checked /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Stamina' value=1 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Stamina' value=2 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Stamina' value=3 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Stamina' value=4 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Stamina' value=5 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Stamina' value=6 /><span></span>
+					</div>
+				</div>
+            </div>
+    		<div class="col">			
+				<div class="sheet-grid_megaattributes2">
+					<div class="item 120">Mega-Composure</div>
+					<div>
+						<input type='radio' class="mdot zero" name='attr_Mega_Composure' value=0 checked /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Composure' value=1 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Composure' value=2 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Composure' value=3 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Composure' value=4 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Composure' value=5 /><span></span>
+						<input type='radio' class="mdot" name='attr_Mega_Composure' value=6 /><span></span>
+					</div>
+				</div>
+            </div>
+        </div>
+		<br/>
+		<div class="grid_dual_col">
+			<div class="grid_item">
+				<h3>Quantum</h3>
+				<div class="row">
+					<input type='radio' class="dot zero" name='attr_Quantum' value=0 checked /><span></span>
+					<input type='radio' class="dot" name='attr_Quantum' value=1 /><span></span>
+					<input type='radio' class="dot" name='attr_Quantum' value=2 /><span></span>
+					<input type='radio' class="dot" name='attr_Quantum' value=3 /><span></span>
+					<input type='radio' class="dot" name='attr_Quantum' value=4 /><span></span>
+					<input type='radio' class="dot" name='attr_Quantum' value=5 /><span></span>
+					<input type='radio' class="dot" name='attr_Quantum' value=6 /><span></span>
+					<input type='radio' class="dot" name='attr_Quantum' value=7 /><span></span>
+					<input type='radio' class="dot" name='attr_Quantum' value=8 /><span></span>
+					<input type='radio' class="dot" name='attr_Quantum' value=9 /><span></span>
+					<input type='radio' class="dot" name='attr_Quantum' value=10 /><span></span>					
+					<div class="item 32"><input type='text' class='sheet-value' name='attr_QuantumPoints'/></div>
+					/
+					<div class="item 32"><input type='text' class='sheet-value' name='attr_QuantumPointsTotal'/></div>
+				</div>
+				<div class="row">
+					<div class="aligneddots">
+						<div class="row"><input type='text' class='sheet-specialty' name='attr_Transformations' placeholder='Transformations'></div>
+					</div>
+				</div>
+			</div>
+			<div class="grid_item">
+				<h3>Transcendance / Flux</h3>
+				<div class="row">
+					<input type='radio' class="dot zero" name='attr_Transcendance' value=0 checked /><span></span>
+					<input type='radio' class="dot" name='attr_Transcendance' value=1 /><span></span>
+					<input type='radio' class="dot" name='attr_Transcendance' value=2 /><span></span>
+					<input type='radio' class="dot" name='attr_Transcendance' value=3 /><span></span>
+					<input type='radio' class="dot" name='attr_Transcendance' value=4 /><span></span>
+					<input type='radio' class="dot" name='attr_Transcendance' value=5 /><span></span>
+					<input type='radio' class="dot" name='attr_Transcendance' value=6 /><span></span>
+					<input type='radio' class="dot" name='attr_Transcendance' value=7 /><span></span>
+					<input type='radio' class="dot" name='attr_Transcendance' value=8 /><span></span>
+					<input type='radio' class="dot" name='attr_Transcendance' value=9 /><span></span>
+					<input type='radio' class="dot" name='attr_Transcendance' value=10 /><span></span>					
+				</div>
+				<div class="row">
+					<input type='radio' class="mdot zero" name='attr_Flux' value=0 checked /><span></span>
+					<input type='radio' class="mdot" name='attr_Flux' value=1 /><span></span>
+					<input type='radio' class="mdot" name='attr_Flux' value=2 /><span></span>
+					<input type='radio' class="mdot" name='attr_Flux' value=3 /><span></span>
+					<input type='radio' class="mdot" name='attr_Flux' value=4 /><span></span>
+					<input type='radio' class="mdot" name='attr_Flux' value=5 /><span></span>
+					<input type='radio' class="mdot" name='attr_Flux' value=6 /><span></span>
+					<input type='radio' class="mdot" name='attr_Flux' value=7 /><span></span>
+					<input type='radio' class="mdot" name='attr_Flux' value=8 /><span></span>
+					<input type='radio' class="mdot" name='attr_Flux' value=9 /><span></span>
+					<input type='radio' class="mdot" name='attr_Flux' value=10 /><span></span>
+					<button class="txt-btn" name="roll_Grounding" type="roll" value="&{template:base} {{name=Grounding}} {{subtag= @{character_name}}} [[{(@{Composure}+@{Quantum})d10!}>7]] {{grounding=$[[0]]}}">Grounding</button>			
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="grid_dual_col">
+			<div class="grid_item">
+				<div>
+					<h3>Quantum Powers</h3>
+				</div>
+				<fieldset class='repeating_powers'>
+					<div class="grid_powers">
+						<div><button class="roll-btn" name="roll_rPower" type="roll" value="&{template:base} {{name=@{rPowerName}}} {{subtag= @{character_name}}} [[ [[{(@{rPower}+@{Quantum})d10!}>7]] + [[?{Enhancement?|0}]] ]] {{power=$[[0]]}} {{powertotal=$[[2]]}} {{enhancement=$[[1]]}}"></button></div>
+						<div><input type='text' class='sheet-repeating' name='attr_rPowerName' placeholder='Name'></div>
+						<div>
+							<input type='radio' class="dot zero" name='attr_rPower' value=0 checked /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=1  /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=2 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=3 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=4 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=5 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=6 /><span></span>
+						</div>
+					</div>
+					<div class="grid_powers2">
+						<input type='text' class='sheet-repeating' name='attr_rPowerAction' placeholder='Action'>
+						<input type='text' class='sheet-repeating' name='attr_rPowerCost' placeholder='Cost'>
+						<input type='text' class='sheet-repeating' name='attr_rPowerRange' placeholder='Range'>
+						<input type='text' class='sheet-repeating' name='attr_rPowerDuration' placeholder='Duration'>
+					</div>
+					<div class="grid_powers3">
+						<input type='text' class='sheet-repeating' name='attr_rPowerTags' placeholder='Tags'>
+					</div>
+				</fieldset>			
+			</div>
+			<div class="grid_item">
+				<h3>Mega-Edges</h3>
+				<fieldset class='repeating_medges'>
+					<div class="sheet-grid_medges">
+						<div><input type='text' class='sheet-repeating' name='attr_rMEdgeName' placeholder='Name'></div>
+						<div>
+							<input type='radio' class="dot zero" name='attr_rMEdge' value=0 checked /><span></span>
+							<input type='radio' class="dot" name='attr_rMEdge' value=1  /><span></span>
+							<input type='radio' class="dot" name='attr_rMEdge' value=2 /><span></span>
+							<input type='radio' class="dot" name='attr_rMEdge' value=3 /><span></span>
+							<input type='radio' class="dot" name='attr_rMEdge' value=4 /><span></span>
+							<input type='radio' class="dot" name='attr_rMEdge' value=5 /><span></span>
+							<input type='radio' class="dot" name='attr_rMEdge' value=6 /><span></span>
+						</div>
+					</div>
+					<div class="grid_medges2">
+						<input type='text' class='sheet-repeating' name='attr_rMEdgeDesc'>
+					</div>
+				</fieldset>			
+			</div>
+		</div>
+		<br/>
+		<div>
+			<h3>Q-Tech</h3>
+			<textarea class="textarea_2" name='attr_QTech'></textarea>
+		</div>
+	</div>
+	<!-- Character Background -->	
+	<div class='sheet-ch_background'>
+		<div class='sheet-grid_details_2'>
+    		<div class="grid_item"><input type='text' class='sheet-st' name='attr_OriginPath' /></div>
+    		<div class="grid_item"><input class='sheet-st' type='text' name='attr_SocietyPath' /></div>
+    		<div class="grid_item"><input class='sheet-st' type='text' name='attr_RolePath' /></div>
+    		<div class="grid_item"><div class="subtitle">Origin Path</div></div> 
+    		<div class="grid_item"><div class="subtitle">Society Path</div></div> 
+    		<div class="grid_item"><div class="subtitle">Role Path</div></div>
+    	</div>
+		<div class='sheet-grid_details_3'>
+			<div class="grid_item"><input class='sheet-st' type='text' name='attr_OtherPath' /></div>
+			<div class="grid_item"><div class="subtitle">Other Paths</div></div>
+		</div>
+		<div class='dual_col'>
+			<div class='col'>
+				<h3>Background</h3>
+				<textarea class="textarea_2" name='attr_BackNotes' placeholder='Background Notes'></textarea>
+			</div>
+			<div class='col'>
+				<h3>Notes</h3>
+				<textarea class="textarea_2" name='attr_MiscNotes' placeholder='General Notes'></textarea>
+			</div>
+		</div>
+	</div>	
+</div>
+<!-- Roll Templates -->
+<rolltemplate class="sheet-rolltemplate-base">
+    <div class="container">
+        <div><h1>{{name}}</h1></div>
+        <div><span class="subheader">{{subtag}}</span></div>
+        <div class="arrow-container"><div class="arrow-right"></div></div>
+		{{#generic}}
+			{{#rollTotal() generic 0}}
+				{{#rollWasFumble() generic}}
+					<div class="rowcolor"><span class="tcat">Roll: </span>{{generic}} Fumble!</div>
+				{{/rollWasFumble() generic}}
+				{{#^rollWasFumble() generic}}
+					<div class="rowcolor"><span class="tcat">Roll: </span>{{generic}} Failure!</div>
+				{{/^rollWasFumble() generic}}
+			{{/rollTotal() generic 0}}
+			{{#rollGreater() generic 0}}
+				<div class="rowcolor"><span class="tcat">Roll: </span>{{generic}}+{{enhancement}} = {{generictotal}} Success(es)</div>
+			{{/rollGreater() generic 0}}
+		{{/generic}}
+		{{#skill}}
+			{{#rollTotal() skill 0}}
+				{{#rollWasFumble() skill}}
+					<div class="rowcolor"><span class="tcat">Roll: </span>{{skill}} Fumble!</div>
+				{{/rollWasFumble() skill}}
+				{{#^rollWasFumble() skill}}
+					<div class="rowcolor"><span class="tcat">Roll: </span>{{skill}} Failure!</div>
+				{{/^rollWasFumble() skill}}
+			{{/rollTotal() skill 0}}
+			{{#rollGreater() skill 0}}
+				<div class="rowcolor"><span class="tcat">Roll: </span>{{skill}}+{{enhancement}} = {{skilltotal}} Success(es)</div>
+			{{/rollGreater() skill 0}}
+		{{/skill}}
+		{{#initiative}}
+			<div class="rowcolor"><span class="tcat">Roll: </span>{{initiative}}+{{enhancement}} = {{initiativetotal}} Success(es)</div>
+		{{/initiative}}
+		{{#grounding}}
+			{{#rollTotal() grounding 0}}
+				{{#rollWasFumble() grounding}}
+					<div class="rowcolor"><span class="tcat">Roll: </span>{{grounding}} Fumble!</div>
+				{{/rollWasFumble() grounding}}
+					{{#^rollWasFumble() grounding}}
+						<div class="rowcolor"><span class="tcat">Roll: </span>{{grounding}} Failure!</div>
+					{{/^rollWasFumble() grounding}}
+			{{/rollTotal() grounding 0}}
+			{{#rollGreater() grounding 0}}
+				<div class="rowcolor"><span class="tcat">Roll: </span>{{grounding}} Success(es)</div>
+			{{/rollGreater() grounding 0}}
+		{{/grounding}}
+		{{#power}}
+			<div class="rowcolor"><span class="tcat">Roll: </span>{{power}}+{{enhancement}} = {{powertotal}} Success(es)</div>
+		{{/power}}
+        {{#scale}}
+            <div>
+                <div class="rowcolor2">{{scale}}</div>
+            </div>
+        {{/scale}}
+		{{#note}}
+            <div>
+                {{note}} 
+            </div>
+        {{/note}}
+    </div>
+</rolltemplate>
+<!-- Script Worker -->
+<script type="text/worker">
+// tabs
+
+const buttonlist = ["core","status","gear","quantum","ch_background"];
+buttonlist.forEach(button => {
+    on(`clicked:${button}`, function() {
+        setAttrs({
+            sheetTab: button
+        });
+    });
+});
+</script>

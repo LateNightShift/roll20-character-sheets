@@ -1,0 +1,9 @@
+{
+  "html": "trinity-continuum-aberrant.html",
+  "css": "trinity-continuum-aberrant.css",
+  "authors": "Andrew P.",
+  "roll20userid": "517267",
+  "preview": "aberrant.png",
+  "instructions": "This is a very basic, first pass. Many functions may be missing or need improvement. Initial commit used an older sheet as a template and some portions of code may need to be updated.",
+  "legacy": true
+}
