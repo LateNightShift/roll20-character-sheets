@@ -1,6 +1,7 @@
 <!-- Character Sheet -->
 <div class='wrapper'>
 	<input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab"  value="core"  />
+	<!-- Header -->
 	<div class='sheet-header'>	
 		<h2>Trinity Continuum - Aberrant</h2>
 		<div class='sheet-grid_details'>
@@ -21,6 +22,7 @@
     		<div class="grid_item"><div class="subtitle">Short-term Aspiration 2</div></div> 
     		<div class="grid_item"><div class="subtitle">Long-term Aspiration</div></div> 
     	</div>
+		<br/>
 		<div class="grid_dual_col">
 			<div class="grid_item">
 				<button class="roll-btn" name="roll_Generic" type="roll" value="&{template:base} {{name=}} {{subtag= @{character_name}}} [[ [[{?{Total Dice?|0}d10!}>7]] + [[?{Enhancement?|0}]] ]] {{generic=$[[0]]}} {{generictotal=$[[2]]}} {{enhancement=$[[1]]}}"> Roll-for-it </button>			
@@ -35,6 +37,7 @@
 		</div>
 	</div>
 	<br/>
+	<!-- Skills Abilities etc -->
 	<div class='sheet-core'>
 	<!-- Skills Header-->
 		<div class="grid_dual_col">
@@ -73,7 +76,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_CloseCombat" type="roll" value="&{template:base} {{name=CloseCombat}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{CloseCombat})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">CloseCombat</button></div>
+					<div><button class="txt-btn" name="roll_CloseCombat" type="roll" value="&{template:base} {{name=CloseCombat}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{CloseCombat})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Close Combat</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_CloseCombat_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_CloseCombat' value=0 checked /><span></span>
@@ -398,7 +401,7 @@
 				<h3>Edges</h3>
 				<fieldset class='repeating_edges'>
 					<div class="sheet-grid_edges">
-						<div><input type='text' class='sheet-specialty' name='attr_rEdgeName' placeholder='Name'></div>
+						<div><input type='text' class='sheet-repeating' name='attr_rEdgeName' placeholder='Name'></div>
 						<div>
 							<input type='radio' class="dot zero" name='attr_rEdge' value=0 checked /><span></span>
 							<input type='radio' class="dot" name='attr_rEdge' value=1  /><span></span>
@@ -415,13 +418,13 @@
 				<h3>Skill Tricks</h3>
 				<fieldset class='repeating_skilltricks'>
 					<div class="aligneddots">
-						<div class="row"><input type='text' class='sheet-specialty' name='attr_rSTrickName' placeholder='Name'></div>
+						<div class="row"><input type='text' class='sheet-repeating' name='attr_rSTrickName' placeholder='Name'></div>
 					</div>
 				</fieldset>			
 			</div>
 		</div>
 	</div>
-	<!-- Injuries and Conditionds -->	
+	<!-- Injuries and Conditions -->	
 	<div class='sheet-status'>
 		<div class="dual_col">
 			<div class="col">
@@ -449,29 +452,77 @@
 				<h3>Other Conditions</h3>
 				<fieldset class='repeating_skilltricks'>
 					<div class="aligneddots">
-						<div class="row"><input type='text' class='sheet-specialty' name='attr_rConditions' placeholder='Name'></div>
+						<div class="row"><input type='text' class='sheet-repeating' name='attr_rConditions' placeholder='Name'></div>
 					</div>
 				</fieldset>			
 			</div>
 		</div>
 	</div>
 	<!-- Gear and Stuff (needs work) -->	
-	<div class='sheet-gear'>	
-		<div>
-			<h3>Gear</h3>
-			<textarea class="textarea_2" name='attr_GearNotes' placeholder='Gear'></textarea>
+	<div class='sheet-gear'>
+		<div class="dual_col">
+			<div class='col'>
+				<h3>Gear</h3>
+				<fieldset class='repeating_gear'>
+					<div class="grid_gear">
+						<input type='text' class='sheet-repeating' name='attr_rGearName' placeholder='Name'>
+						<span>Rank</span>
+						<input type='text' class='sheet-repeating' name='attr_rGearRank' placeholder='0'>
+						<span>Enhancement</span>
+						<input type='text' class='sheet-repeating' name='attr_rGearEnhancement' placeholder='0'>
+					</div>
+					<div class="grid_gear2">
+						<input type='text' class='sheet-specialty' name='attr_rGearProperties'>
+					</div>
+				</fieldset>
+			</div>
+			<div class='col'>
+				<h3>Armor</h3>
+				<fieldset class='repeating_armor'>
+					<div class="grid_armor">
+						<input type='text' class='sheet-repeating' name='attr_rArmorName' placeholder='Name'>
+						<span>Soft</span>
+						<input type='text' class='sheet-repeating' name='attr_rArmorSoft' placeholder='0'>
+						<span>Hard</span>
+						<input type='text' class='sheet-repeating' name='attr_rArmorHard' placeholder='0'>
+					</div>
+					<div class="grid_armor2">
+						<input type='text' class='sheet-specialty' name='attr_rArmorTags'>
+					</div>
+				</fieldset>
+			</div>
 		</div>
-		<div>
-			<h3>Armor</h3>
-			<textarea class="textarea_2" name='attr_ArmorNotes' placeholder='Armor'></textarea>
-		</div>
-		<div>
-			<h3>Weapons</h3>
-			<textarea class="textarea_2" name='attr_WeaponsNotes' placeholder='Weapons'></textarea>
-		</div>
-		<div>
-			<h3>Vehicles</h3>
-			<textarea class="textarea_2" name='attr_VehiclesNotes' placeholder='Vehicles'></textarea>
+		<div class="dual_col">
+			<div class='col'>
+				<h3>Weapons</h3>
+				<fieldset class='repeating_weapons'>
+					<div class="grid_weapons">
+						<input type='text' class='sheet-repeating' name='attr_rWeaponName' placeholder='Name'>
+						<span>Range</span>
+						<input type='text' class='sheet-repeating' name='attr_rWeaponRange' placeholder='Short'>
+						<span>Enhancement</span>
+						<input type='text' class='sheet-repeating' name='attr_rWeaponEnhancement' placeholder='0'>
+					</div>
+					<div class="grid_gear2">
+						<input type='text' class='sheet-specialty' name='attr_rWeaponProperties'>
+					</div>
+				</fieldset>
+			</div>
+			<div class='col'>
+				<h3>Vehicles</h3>
+				<fieldset class='repeating_vehicles'>
+					<div class="grid_vehicles">
+						<input type='text' class='sheet-repeating' name='attr_rVehicleName' placeholder='Name'>
+						<span>Speed</span>
+						<input type='text' class='sheet-repeating' name='attr_rVehicleSpeed' placeholder='0'>
+						<span>Handling</span>
+						<input type='text' class='sheet-repeating' name='attr_rVehicleHandling' placeholder='0'>
+					</div>
+					<div class="grid_armor2">
+						<input type='text' class='sheet-specialty' name='attr_rVehicleTags'>
+					</div>
+				</fieldset>
+			</div>
 		</div>
 	</div>
 	<!-- Nova Abilities -->	
@@ -691,13 +742,13 @@
 						</div>
 					</div>
 					<div class="grid_powers2">
-						<input type='text' class='sheet-repeating' name='attr_rPowerAction' placeholder='Action'>
-						<input type='text' class='sheet-repeating' name='attr_rPowerCost' placeholder='Cost'>
-						<input type='text' class='sheet-repeating' name='attr_rPowerRange' placeholder='Range'>
-						<input type='text' class='sheet-repeating' name='attr_rPowerDuration' placeholder='Duration'>
+						<input type='text' class='sheet-specialty' name='attr_rPowerAction' placeholder='Action'>
+						<input type='text' class='sheet-specialty' name='attr_rPowerCost' placeholder='Cost'>
+						<input type='text' class='sheet-specialty' name='attr_rPowerRange' placeholder='Range'>
+						<input type='text' class='sheet-specialty' name='attr_rPowerDuration' placeholder='Duration'>
 					</div>
 					<div class="grid_powers3">
-						<input type='text' class='sheet-repeating' name='attr_rPowerTags' placeholder='Tags'>
+						<input type='text' class='sheet-specialty' name='attr_rPowerTags' placeholder='Tags'>
 					</div>
 				</fieldset>			
 			</div>
@@ -717,15 +768,10 @@
 						</div>
 					</div>
 					<div class="grid_medges2">
-						<input type='text' class='sheet-repeating' name='attr_rMEdgeDesc'>
+						<input type='text' class='sheet-specialty' name='attr_rMEdgeDesc'>
 					</div>
 				</fieldset>			
 			</div>
-		</div>
-		<br/>
-		<div>
-			<h3>Q-Tech</h3>
-			<textarea class="textarea_2" name='attr_QTech'></textarea>
 		</div>
 	</div>
 	<!-- Character Background -->	
@@ -745,7 +791,7 @@
 		<div class='dual_col'>
 			<div class='col'>
 				<h3>Background</h3>
-				<textarea class="textarea_2" name='attr_BackNotes' placeholder='Background Notes'></textarea>
+				<textarea class="textarea_2" name='attr_BackNotes' placeholder='Background'></textarea>
 			</div>
 			<div class='col'>
 				<h3>Notes</h3>

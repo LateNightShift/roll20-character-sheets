@@ -106,6 +106,7 @@
 /*      End of Repeating Blocks        */
 /*      End of Repeating Blocks        */
 /*      End of Repeating Blocks        */
+
 /* columns */
 .sheet-col {
     width:250px;
@@ -266,7 +267,7 @@ input.sheet-repeating {
     border-left: none;
     border-right: none;
     border-top:none;
-	font-style:italic;
+/*	font-style:italic; */
 	padding: 0;
 }
 .sheet-title {
@@ -382,7 +383,7 @@ div.sheet-grid_wounds {
 	grid-template-columns: 20px 120px 220px;
 	  grid-column-gap: 5px;
 	  grid-row-gap: 5px;
-	padding: 2px;
+	padding: 2px 15px;
 }
 div.sheet-grid_attributes_row {
 	display: grid;
@@ -434,6 +435,62 @@ div.sheet-grid_megaattributes2 {
 	  grid-row-gap: 5px;
 	padding: 2px;
 }
+div.sheet-grid_gear {
+	display: grid;
+	grid-template-columns: 185px 30px 20px 80px 20px;
+	  grid-column-gap: 5px;
+	  grid-row-gap: 5px;
+	padding: 2px 10px;
+}
+div.sheet-grid_gear2 {
+	display: grid;
+	grid-template-columns: 375px;
+	  grid-column-gap: 5px;
+	  grid-row-gap: 5px;
+	padding: 2px 10px;
+}
+div.sheet-grid_armor {
+	display: grid;
+	grid-template-columns: 240px 25px 20px 30px 20px;
+	  grid-column-gap: 5px;
+	  grid-row-gap: 5px;
+	padding: 2px 10px;
+}
+div.sheet-grid_armor2 {
+	display: grid;
+	grid-template-columns: 375px;
+	  grid-column-gap: 5px;
+	  grid-row-gap: 5px;
+	padding: 2px 10px;
+}
+div.sheet-grid_weapons {
+	display: grid;
+	grid-template-columns: 156px 40px 40px 80px 20px;
+	  grid-column-gap: 5px;
+	  grid-row-gap: 5px;
+	padding: 2px 10px;
+}
+div.sheet-grid_weapons2 {
+	display: grid;
+	grid-template-columns: 375px;
+	  grid-column-gap: 5px;
+	  grid-row-gap: 5px;
+	padding: 2px 10px;
+}
+div.sheet-grid_vehicles {
+	display: grid;
+	grid-template-columns: 205px 40px 20px 50px 20px;
+	  grid-column-gap: 5px;
+	  grid-row-gap: 5px;
+	padding: 2px 10px;
+}
+div.sheet-grid_vehicles2 {
+	display: grid;
+	grid-template-columns: 375px;
+	  grid-column-gap: 5px;
+	  grid-row-gap: 5px;
+	padding: 2px 10px;
+}
 div.sheet-grid_powers {
 	display: grid;
 	grid-template-columns: 30px 165px 120px;
@@ -462,21 +519,21 @@ div.sheet-grid_medges {
 	grid-template-columns: 200px 120px;
 	  grid-column-gap: 5px;
 	  grid-row-gap: 5px;
-	padding: 2px;
+	padding: 2px 10px;;
 }
 div.sheet-grid_medges2 {
 	display: grid;
 	grid-template-columns: 335px;
 	  grid-column-gap: 5px;
 	  grid-row-gap: 5px;
-	padding: 2px;
+	padding: 2px 10px;;
 }
 div.sheet-grid_edges {
 	display: grid;
 	grid-template-columns: 200px 120px;
 	  grid-column-gap: 5px;
 	  grid-row-gap: 5px;
-	padding: 2px;
+	padding: 2px 10px;
 }
 div.sheet-grid_item {
   padding: 2px;
@@ -633,151 +690,6 @@ input.sheet-approachcheck[type="radio"]:checked + span::before {
     content: "✖";
 }
 
-
-/*  gear        */
-/*  gear        */
-/*  gear        */
-/* Hide actual radio/checkbox */
-input.sheet-gear[type="checkbox"] {
-    position: relative;
-    top: 0px;
-    left: 0px;
-    opacity: 0;
-    width: 16px;
-    height: 16px;
-    position: relative;
-    top: 5px;
-    left: 6px;
-    margin: -10px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-/* Fake radio/checkbox */
-input.sheet-gear[type="checkbox"] + span::before {
-    position: relative;
-    top: 4px;
-    left: 0px;
-    margin-right: 4px;
-    border: none;
-    line-height: 14px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: middle;
-    box-shadow: 0 0 2px #ccc;
-    background: transparent;
-    font-family: 'Pictos';
-    content: "y";
-    color:red;
-}
-
-/* Fake checkbox */
-input.sheet-gear[type="checkbox"] + span::before {
-    font-family: 'Pictos';
-    content: "y";
-    width: 14px;
-    height: 14px;
-    font-size: 16px;
-    border-radius: 3px;
-}
-
-input.sheet-gear[type="checkbox"]:checked + span::before {
-    color:gray;
-}
-/*  strike        */
-/*  strike        */
-/*  strike        */
-input.sheet-strike[type="checkbox"] {
-    opacity: 0;
-    width: 25px;
-    position: relative;
-    top: 0px;
-    left: 0px;
-    margin: -5px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-/* -----Fake sheet-gear skillbox----- */
-
-input.sheet-strike[type="checkbox"]::before + span::before {
-    margin-right: 4px;
-    margin-left: 0px;
-    line-height: 14px;
-    display: inline-block;
-    vertical-align: middle;
-    text-align:center;
-    content: "";
-    width: 20px;
-    height: 14px;
-    position: relative;
-}
-span.sheet-strike {
-    position: relative;
-    left: -10px;
-    width: 20px;
-    color:black;
-    text-shadow:none;
-    text-decoration: line-through;
-    font-weight:bold;
-    }
-input.sheet-strike[type="checkbox"]:checked + span {
-    color: red;
-    text-shadow:none;
-    text-decoration: none;
-}
-
-/* Hide actual radio/checkbox */
-input.sheet-skill_open[type="checkbox"] {
-    position: relative;
-    top: 0px;
-    left: 0px;
-    opacity: 0;
-    width: 250px;
-    height: 16px;
-    position: relative;
-    top: 5px;
-    left: 6px;
-    margin: -10px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-/* Fake radio/checkbox */
-input.sheet-skill_open[type="checkbox"] + span::before {
-    position: relative;
-    top: -14px;
-    left: -4px;
-    margin-right: 0px;
-    border: none;
-    border-radius:4px;
-    line-height: 14px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: middle;
-    background: darkred;
-    color:white;
-}
-
-/* Fake checkbox */
-input.sheet-skill_open[type="checkbox"] + span::before {
-    content: "Skill Close";
-    height:16px;
-    width:250px;
-    font-size: 12px;
-    border-radius: 4px;
-}
-
-input.sheet-skill_open[type="checkbox"]:checked + span::before {
-    content: "Skill Open";
-}
-/*  grid_btn        */
-/*  grid_btn        */
-/*  grid_btn        */
-button[type=roll].sheet-background::before,
-button[type=roll].sheet-grid_btn::before {
-    content: '';
-}
 .sheet-grid_btn {
     height:20px;
     width:20px;
