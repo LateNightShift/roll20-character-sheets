@@ -491,6 +491,13 @@ div.sheet-grid_vehicles2 {
 	  grid-row-gap: 5px;
 	padding: 2px 10px;
 }
+div.sheet-grid_quantum {
+	display: grid;
+	grid-template-columns: 275px 80px;
+	  grid-column-gap: 5px;
+	  grid-row-gap: 5px;
+	padding: 2px;
+}
 div.sheet-grid_powers {
 	display: grid;
 	grid-template-columns: 30px 165px 120px;

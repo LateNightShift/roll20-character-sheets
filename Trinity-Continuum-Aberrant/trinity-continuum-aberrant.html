@@ -50,7 +50,7 @@
 		<div class="sheet-grid_skills_row">
             <div class="col">
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Aim" type="roll" value="&{template:base} {{name=Aim}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Aim})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Aim</button></div>
+					<div><button class="txt-btn" name="roll_Aim" type="roll" value="&{template:base} {{name=Aim}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Aim}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Aim</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Aim_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Aim' value=0 checked /><span></span>
@@ -63,7 +63,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Athletics" type="roll" value="&{template:base} {{name=Athletics}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Athletics})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Athletics</button></div>
+					<div><button class="txt-btn" name="roll_Athletics" type="roll" value="&{template:base} {{name=Athletics}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Athletics}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Athletics</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Athletics_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Athletics' value=0 checked /><span></span>
@@ -76,7 +76,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_CloseCombat" type="roll" value="&{template:base} {{name=CloseCombat}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{CloseCombat})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Close Combat</button></div>
+					<div><button class="txt-btn" name="roll_CloseCombat" type="roll" value="&{template:base} {{name=Close Combat}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{CloseCombat}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Close Combat</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_CloseCombat_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_CloseCombat' value=0 checked /><span></span>
@@ -89,7 +89,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Command" type="roll" value="&{template:base} {{name=Command}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Command})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Command</button></div>
+					<div><button class="txt-btn" name="roll_Command" type="roll" value="&{template:base} {{name=Command}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Command}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Command</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Command_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Command' value=0 checked /><span></span>
@@ -102,7 +102,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Culture" type="roll" value="&{template:base} {{name=Culture}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Culture})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Culture</button></div>
+					<div><button class="txt-btn" name="roll_Culture" type="roll" value="&{template:base} {{name=Culture}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Culture}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Culture</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Culture_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Culture' value=0 checked /><span></span>
@@ -115,7 +115,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Empathy" type="roll" value="&{template:base} {{name=Empathy}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Empathy})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Empathy</button></div>
+					<div><button class="txt-btn" name="roll_Empathy" type="roll" value="&{template:base} {{name=Empathy}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Empathy}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Empathy</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Empathy_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Empathy' value=0 checked /><span></span>
@@ -128,7 +128,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Enigmas" type="roll" value="&{template:base} {{name=Enigmas}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Enigmas})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Enigmas</button></div>
+					<div><button class="txt-btn" name="roll_Enigmas" type="roll" value="&{template:base} {{name=Enigmas}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Enigmas}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Enigmas</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Enigmas_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Enigmas' value=0 checked /><span></span>
@@ -141,7 +141,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Humanities" type="roll" value="&{template:base} {{name=Humanities}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Humanities})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Humanities</button></div>
+					<div><button class="txt-btn" name="roll_Humanities" type="roll" value="&{template:base} {{name=Humanities}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Humanities}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Humanities</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Humanities_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Humanities' value=0 checked /><span></span>
@@ -156,7 +156,7 @@
             </div>
 			<div class="col">
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Integrity" type="roll" value="&{template:base} {{name=Integrity}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Integrity})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Integrity</button></div>
+					<div><button class="txt-btn" name="roll_Integrity" type="roll" value="&{template:base} {{name=Integrity}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Integrity}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Integrity</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Integrity_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Integrity' value=0 checked /><span></span>
@@ -169,7 +169,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Larceny" type="roll" value="&{template:base} {{name=Larceny}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Larceny})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Larceny</button></div>
+					<div><button class="txt-btn" name="roll_Larceny" type="roll" value="&{template:base} {{name=Larceny}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Larceny}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Larceny</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Larceny_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Larceny' value=0 checked /><span></span>
@@ -182,7 +182,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Medicine" type="roll" value="&{template:base} {{name=Medicine}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Medicine})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Medicine</button></div>
+					<div><button class="txt-btn" name="roll_Medicine" type="roll" value="&{template:base} {{name=Medicine}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Medicine}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Medicine</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Medicine_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Medicine' value=0 checked /><span></span>
@@ -195,7 +195,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Persuasion" type="roll" value="&{template:base} {{name=Persuasion}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Persuasion})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Persuasion</button></div>
+					<div><button class="txt-btn" name="roll_Persuasion" type="roll" value="&{template:base} {{name=Persuasion}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Persuasion}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Persuasion</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Persuasion_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Persuasion' value=0 checked /><span></span>
@@ -208,7 +208,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Pilot" type="roll" value="&{template:base} {{name=Pilot}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Pilot})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Pilot</button></div>
+					<div><button class="txt-btn" name="roll_Pilot" type="roll" value="&{template:base} {{name=Pilot}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Pilot}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Pilot</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Pilot_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Pilot' value=0 checked /><span></span>
@@ -221,7 +221,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Science" type="roll" value="&{template:base} {{name=Science}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Science})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Science</button></div>
+					<div><button class="txt-btn" name="roll_Science" type="roll" value="&{template:base} {{name=Science}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Science}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Science</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Science_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Science' value=0 checked /><span></span>
@@ -234,7 +234,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Survival" type="roll" value="&{template:base} {{name=Survival}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Survival})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Survival</button></div>
+					<div><button class="txt-btn" name="roll_Survival" type="roll" value="&{template:base} {{name=Survival}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Survival}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Survival</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Survival_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Survival' value=0 checked /><span></span>
@@ -247,7 +247,7 @@
 					</div>
 				</div>
 				<div class="sheet-grid_skills">
-					<div><button class="txt-btn" name="roll_Technology" type="roll" value="&{template:base} {{name=Technology}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Technology})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Technology</button></div>
+					<div><button class="txt-btn" name="roll_Technology" type="roll" value="&{template:base} {{name=Technology}} {{subtag= @{character_name}}} [[ [[{(?{Attribute?|Intellect,@{Intellect}|Cunning,@{Cunning}|Resolve,@{Resolve}|Might,@{Might}|Dexterity,@{Dexterity}|Stamina,@{Stamina}|Presence,@{Presence}|Manipulation,@{Manipulation}|Composure,@{Composure}}+@{Technology}+?{Momentum?|0})d10!}>7]]+[[?{Enhancement?|0}]] ]] {{skill=$[[0]]}} {{enhancement=$[[1]]}} {{skilltotal=$[[2]]}}">Technology</button></div>
 					<div><input class='sheet-specialty' type='text' name='attr_Technology_Specialty' /></div>
 					<div>
 						<input type='radio' class="dot zero" name='attr_Technology' value=0 checked /><span></span>
@@ -668,21 +668,24 @@
 		<div class="grid_dual_col">
 			<div class="grid_item">
 				<h3>Quantum</h3>
-				<div class="row">
-					<input type='radio' class="dot zero" name='attr_Quantum' value=0 checked /><span></span>
-					<input type='radio' class="dot" name='attr_Quantum' value=1 /><span></span>
-					<input type='radio' class="dot" name='attr_Quantum' value=2 /><span></span>
-					<input type='radio' class="dot" name='attr_Quantum' value=3 /><span></span>
-					<input type='radio' class="dot" name='attr_Quantum' value=4 /><span></span>
-					<input type='radio' class="dot" name='attr_Quantum' value=5 /><span></span>
-					<input type='radio' class="dot" name='attr_Quantum' value=6 /><span></span>
-					<input type='radio' class="dot" name='attr_Quantum' value=7 /><span></span>
-					<input type='radio' class="dot" name='attr_Quantum' value=8 /><span></span>
-					<input type='radio' class="dot" name='attr_Quantum' value=9 /><span></span>
-					<input type='radio' class="dot" name='attr_Quantum' value=10 /><span></span>					
-					<div class="item 32"><input type='text' class='sheet-value' name='attr_QuantumPoints'/></div>
-					/
-					<div class="item 32"><input type='text' class='sheet-value' name='attr_QuantumPointsTotal'/></div>
+				<div class="grid_quantum">
+					<div class="row">
+						<input type='radio' class="dot zero" name='attr_Quantum' value=0 checked /><span></span>
+						<input type='radio' class="dot" name='attr_Quantum' value=1 /><span></span>
+						<input type='radio' class="dot" name='attr_Quantum' value=2 /><span></span>
+						<input type='radio' class="dot" name='attr_Quantum' value=3 /><span></span>
+						<input type='radio' class="dot" name='attr_Quantum' value=4 /><span></span>
+						<input type='radio' class="dot" name='attr_Quantum' value=5 /><span></span>
+						<input type='radio' class="dot" name='attr_Quantum' value=6 /><span></span>
+						<input type='radio' class="dot" name='attr_Quantum' value=7 /><span></span>
+						<input type='radio' class="dot" name='attr_Quantum' value=8 /><span></span>
+						<input type='radio' class="dot" name='attr_Quantum' value=9 /><span></span>
+						<input type='radio' class="dot" name='attr_Quantum' value=10 /><span></span>					
+						<div class="item 32"><input type='text' class='sheet-value' name='attr_QuantumPoints'/></div>
+						/
+						<div class="item 32"><input type='text' class='sheet-value' name='attr_QuantumPointsTotal'/></div>
+					</div>
+					<div><button class="txt-btn" name="roll_MaxOut" type="roll" value="&{template:base} {{name=Max Out}} {{subtag= @{character_name}}} [[ [[{(?{Quantum Pts? (Max @{Quantum})|@{Quantum}}+?{Momentum?|0})d10!}>7]] + [[?{Enhancement? (Max @{Quantum})|0}]] ]] {{maxout=$[[0]]}} {{maxouttotal=$[[2]]}} {{enhancement=$[[1]]}}">Max Out</button></div>
 				</div>
 				<div class="row">
 					<div class="aligneddots">
@@ -848,6 +851,19 @@
 				<div class="rowcolor"><span class="tcat">Roll: </span>{{grounding}} Success(es)</div>
 			{{/rollGreater() grounding 0}}
 		{{/grounding}}
+		{{#maxout}}
+			{{#rollTotal() maxout 0}}
+				{{#rollWasFumble() maxout}}
+					<div class="rowcolor"><span class="tcat">Roll: </span>{{maxout}} Fumble!</div>
+				{{/rollWasFumble() maxout}}
+				{{#^rollWasFumble() maxout}}
+					<div class="rowcolor"><span class="tcat">Roll: </span>{{maxout}} Failure!</div>
+				{{/^rollWasFumble() maxout}}
+			{{/rollTotal() maxout 0}}
+			{{#rollGreater() maxout 0}}
+				<div class="rowcolor"><span class="tcat">Roll: </span>{{maxout}}+{{enhancement}} = {{maxouttotal}} Success(es)</div>
+			{{/rollGreater() maxout 0}}
+		{{/maxout}}
 		{{#power}}
 			<div class="rowcolor"><span class="tcat">Roll: </span>{{power}}+{{enhancement}} = {{powertotal}} Success(es)</div>
 		{{/power}}
